@@ -10,7 +10,7 @@ export class AppService {
   ) {}
 
   async getHello(): Promise<string> {
-    await this.cacheManager.set('test', 'settled')
+    await this.cacheManager.set('test', 'settled');
     const test = (await this.cacheManager.get<string>('test')) || 'unsettled';
     return test;
   }
